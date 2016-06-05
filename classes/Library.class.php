@@ -29,7 +29,7 @@ class Heh{
                 <td><input class=\"form-control\" id=\"disabledInput\" type=\"text\" name=\"isbn\" value=\"$row[isbn]\" disabled></td>
                 <input type=\"hidden\" name=\"i\" value=\"$row[isbn]\">
                 <td><input type=\"submit\" class=\"btn btn-primary\" value=\"Upd\"></td>
-                </tr>";
+                </tr></form>";
             }
             echo "<form action=\"add.php\" method=\"post\"><tr>
             <td><i class=\"glyphicon glyphicon-pencil\"></i></td>
@@ -94,7 +94,8 @@ class Heh{
         }
     }
 
-    public function update(){
+    public function update()
+    {
         try {
             $upd = Connection::connect();
             if (isset($_POST['i'])) {
@@ -112,26 +113,6 @@ class Heh{
                 $isbn = $_POST['i'];
                 $stmt->execute();
             }
-            /*id="disabledInput"
-             * if (isset($_POST['author']) &&
-                isset($_POST['title']) &&
-                isset($_POST['category']) &&
-                isset($_POST['year']))
-            {
-                $stmt = $upd->prepare("UPDATE classics SET author = :author, title = :title, category = :category, year = :year WHERE isbn = :isbn");
-                $stmt->bindParam(':author', $author);
-                $stmt->bindParam(':title', $title);
-                $stmt->bindParam(':category', $category);
-                $stmt->bindParam(':year', $year);
-                $stmt->bindParam(':isbn', $isbn);
-
-                $author = $_POST['author'];
-                $title = $_POST['title'];
-                $category = $_POST['category'];
-                $year = $_POST['year'];
-                $isbn = $_POST['isbn'];
-                $stmt->execute();
-            }*/
         }
         catch (PDOException $e) {
             echo "<br>Не удалось установить соединения с базой данных: " . $e->getMessage(). "<br>";
