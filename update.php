@@ -5,5 +5,5 @@ require_once 'classes/Connection.class.php';
 
 Heh::update();
 
-header('Location: test.php');
+header('Location: db.php');
 ?>
