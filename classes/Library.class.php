@@ -8,30 +8,29 @@ class Heh{
             echo "<div class=\"container\"><table class=\"table\"><thead><tr><th><i class=\"glyphicon glyphicon-asterisk\"></i></th><th>Author</th><th>Title</th><th>Category</th><th>Year</th><th>ISBN</th><th>Action</th></tr></thead><tbody>";
             while ($row = $stmt->fetch()) {
                 echo "<tr class='clickable' data-toggle='collapse' id='$row[id]' data-target='.$row[id]'>";
-                echo "<td><i class=\"glyphicon glyphicon-plus\"></i></td>";
+                echo "<td><i class=\"glyphicon glyphicon-menu-hamburger\"></i></td>";
                 echo "<td>" . $row['author'] . "</td>";
                 echo "<td>" . $row['title'] . "</td>";
                 echo "<td>" . $row['category'] . "</td>";
                 echo "<td>" . $row['year'] . "</td>";
                 echo "<td>" . $row['isbn'] . "</td>";
-                echo "<form action=\"delete.php\" method=\"post\">
+                echo "<form action=\"modules\delete.php\" method=\"post\">
                       <input type=\"hidden\" name=\"isbn\" value=\"$row[isbn]\" >
                       <input type=\"hidden\" name=\"delete\" value=\"yes\">
                       <td><input type=\"submit\" class=\"btn btn-danger\" value=\"Kill.\"></td>
                       </form>";
-                echo "<form action=\"update.php\" method=\"post\"></tr>
+                echo "<form action=\"modules\update.php\" method=\"post\"></tr>
                 <tr class='collapse $row[id]'>
                 <td></td>
                 <td><input class=\"form-control\"  type=\"text\" name=\"a\" value=\"$row[author]\"></td>
                 <td><input class=\"form-control\"  type=\"text\" name=\"t\" value=\"$row[title]\"></td>
                 <td><input class=\"form-control\"  type=\"text\" name=\"c\" value=\"$row[category]\"></td>
                 <td><input class=\"form-control\"  type=\"text\" name=\"y\" value=\"$row[year]\"></td>
-                <td><input class=\"form-control\" id=\"disabledInput\" type=\"text\" name=\"isbn\" value=\"$row[isbn]\" disabled></td>
-                <input type=\"hidden\" name=\"i\" value=\"$row[isbn]\">
+                <td><input type=\"hidden\" name=\"i\" value=\"$row[isbn]\"></td>
                 <td><input type=\"submit\" class=\"btn btn-primary\" value=\"Upd\"></td>
                 </tr></form>";
             }
-            echo "<form action=\"add.php\" method=\"post\"><tr>
+            echo "<form action=\"modules\add.php\" method=\"post\"><tr>
             <td><i class=\"glyphicon glyphicon-pencil\"></i></td>
             <td><input class=\"form-control\"  type=\"text\" name=\"author\"></td>
             <td><input class=\"form-control\" type=\"text\" name=\"title\"></td>
