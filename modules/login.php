@@ -10,12 +10,12 @@ if(isset($_POST['login']))
 
     $dbh = Connection::getInstance()->connect();
 
-    $check_user= $dbh->prepare("SELECT 1 FROM users WHERE username='$username'AND password='$password'");
-    $check_user->execute();
+    $stmt= $dbh->prepare("SELECT 1 FROM users WHERE username='$username'AND password='$password'");
+    $stmt->execute();
 
-    $run = $check_user->fetch();
+    $stmt = $stmt->fetch();
 
-    if($run)
+    if($stmt)
     {
         header("Location: ../db.php");
 
