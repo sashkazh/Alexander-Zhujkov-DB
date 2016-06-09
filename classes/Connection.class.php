@@ -21,7 +21,7 @@ class Connection {
 		if (!(self::$connection->dbh instanceof PDO)) {
 
 			try {
-				$dsn = "mysql:host=localhost;dbname=publications";
+				$dsn = "mysql:host=localhost;dbname=signup";
 				self::$connection->dbh = new PDO($dsn, self::$user, self::$pass);
 				self::$connection->dbh->exec("SET CHARACTER SET utf8");
 				self::$connection->dbh->setAttribute(PDO::ERRMODE_EXCEPTION, PDO::FETCH_ASSOC);

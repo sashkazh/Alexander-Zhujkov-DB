@@ -6,7 +6,7 @@ include '../classes/Connection.class.php';
 if(isset($_POST['login']))
 {
     $username=$_POST['user'];
-    $password=$_POST['pass'];
+    $password=md5($_POST['pass']);
 
     $dbh = Connection::getInstance()->connect();
 
@@ -19,7 +19,7 @@ if(isset($_POST['login']))
     {
         header("Location: ../db.php");
 
-        $_SESSION['username']=$username;//here session is used and value of $user_email store in $_SESSION.
+        $_SESSION['username']=$username;
 
     }
     else
