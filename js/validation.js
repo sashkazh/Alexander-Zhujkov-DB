@@ -12,17 +12,11 @@ $(function(){
         if(vall == ""){
             $(".us").removeClass( "has-success" ).addClass("has-error");
             username = "";
-        }
-        else if(vall.length < 3){
-            $(".us").removeClass( "has-success" ).addClass("has-error");
-            username = "";
-        }
-        else {
+        } else {
             $(".us").removeClass( "has-error" ).addClass("has-success");
             username = vall;
         }
     });
-
 
     $("#email").keyup(function () {
 
@@ -62,12 +56,10 @@ $(function(){
         if(vall == ""){
             $(".pa").removeClass( "has-success" ).addClass("has-error");
             password = "";
-        }
-        else if(vall.length < 9){
+        } else if(vall.length < 5){
             $(".pa").removeClass( "has-success" ).addClass("has-error");
             password = "";
-        }
-        else {
+        } else {
             $(".pa").removeClass( "has-error" ).addClass("has-success");
             password = vall;
         }
@@ -80,18 +72,15 @@ $(function(){
         if(vall == ""){
             $(".re").removeClass( "has-success" ).addClass("has-error");
             repassword = "";
-        }
-        else if(password !== vall){
+        } else if(password !== vall){
             $(".re").removeClass( "has-success" ).addClass("has-error");
             repassword = "";
-        }
-        else {
+        } else {
             $(".re").removeClass( "has-error" ).addClass("has-success");
             repassword = vall;
         }
     });
-
-
+    
     $("#submitbtn").click(function() {
 
         if(username == "" || email == "" || password == "" || repassword == ""){

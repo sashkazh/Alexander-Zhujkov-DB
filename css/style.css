@@ -29,7 +29,7 @@
     background-image: linear-gradient(to bottom, #79bc64, #5e7056);
     text-decoration: none;
 }
-.form .form-control { margin: 10px; }
+.form .form-control { margin: 7px; }
 @media (min-width:768px) {
     #home{
         margin-top:50px;
@@ -39,4 +39,8 @@
     margin: 150px auto;
     left: 50%;
     right: 50%;
+}
+
+.help-block {
+    text-align: center;
 }

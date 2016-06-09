@@ -49,12 +49,11 @@ class Heh{
     public function delete(){
         try {
             $delete = Connection::connect();
+            $isbn = $_POST["isbn"];
             if (isset($_POST['delete']) && isset($_POST['isbn']))
             {
                 $stmt = $delete->prepare("DELETE FROM classics WHERE isbn = :isbn");
                 $stmt->bindParam(':isbn', $isbn);
-
-                $isbn = $_POST["isbn"];
                 $stmt->execute();
             }
         }
@@ -66,6 +65,13 @@ class Heh{
     public function add(){
         try {
             $add = Connection::connect();
+
+            $author = $_POST['author'];
+            $title = $_POST['title'];
+            $category = $_POST['category'];
+            $year = $_POST['year'];
+            $isbn = $_POST['isbn'];
+
             if (isset($_POST['author']) &&
                 isset($_POST['title']) &&
                 isset($_POST['category']) &&
@@ -79,12 +85,6 @@ class Heh{
                 $stmt->bindParam(':category', $category);
                 $stmt->bindParam(':year', $year);
                 $stmt->bindParam(':isbn', $isbn);
-
-                $author = $_POST['author'];
-                $title = $_POST['title'];
-                $category = $_POST['category'];
-                $year = $_POST['year'];
-                $isbn = $_POST['isbn'];
                 $stmt->execute();
             }
         }
@@ -97,6 +97,13 @@ class Heh{
     {
         try {
             $upd = Connection::connect();
+
+            $author = $_POST['a'];
+            $title = $_POST['t'];
+            $category = $_POST['c'];
+            $year = $_POST['y'];
+            $isbn = $_POST['i'];
+
             if (isset($_POST['i'])) {
                 $stmt = $upd->prepare("UPDATE classics SET author = :author, title = :title, category = :category, year = :year WHERE isbn = :isbn");
                 $stmt->bindParam(':author', $author);
@@ -104,12 +111,6 @@ class Heh{
                 $stmt->bindParam(':category', $category);
                 $stmt->bindParam(':year', $year);
                 $stmt->bindParam(':isbn', $isbn);
-
-                $author = $_POST['a'];
-                $title = $_POST['t'];
-                $category = $_POST['c'];
-                $year = $_POST['y'];
-                $isbn = $_POST['i'];
                 $stmt->execute();
             }
         }

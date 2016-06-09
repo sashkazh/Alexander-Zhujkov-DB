@@ -9,7 +9,7 @@ if(!$_SESSION['username'])
 ?>
 <html>
 <head>
-    <title>DB</title>
+    <title>Database</title>
     <meta name="author" content="Alexander Zhujkov">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/s_f.css" rel="stylesheet">
