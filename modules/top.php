@@ -1,11 +1,9 @@
 <?php
 session_start();
-
-if(!$_SESSION['username'])
+if(empty($_SESSION['username']))
 {
     header("Location: enter.php");
 }
-
 ?>
 <html>
 <head>

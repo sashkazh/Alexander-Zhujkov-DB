@@ -2,7 +2,7 @@
     <head>
         <title>Sign Up</title>
         <meta name="author" content="Alexander Zhujkov">
-        <link href="css/style.css" rel="stylesheet">
+        <link href="css/signup.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <script src="js/jquery.min.js"></script>
         <script src="js/validation.js"></script>

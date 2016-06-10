@@ -6,9 +6,7 @@ $(function(){
     var repassword = "";
 
     $("#username").keyup(function () {
-
         var vall = $(this).val();
-
         if(vall == ""){
             $(".us").removeClass( "has-success" ).addClass("has-error");
             username = "";
@@ -19,15 +17,12 @@ $(function(){
     });
 
     $("#email").keyup(function () {
-
         var vall = $(this).val();
-
         if(vall == ""){
             $(".em").removeClass( "has-success" ).addClass("has-error");
             email = "";
         } else {
             $.ajax({
-
                 type: 'POST',
                 url: '../modules/signup.php',
                 data: "email="+vall,
@@ -50,9 +45,7 @@ $(function(){
     });
 
     $("#password").keyup(function () {
-
         var vall = $(this).val();
-
         if(vall == ""){
             $(".pa").removeClass( "has-success" ).addClass("has-error");
             password = "";
@@ -66,9 +59,7 @@ $(function(){
     });
 
     $("#repassword").keyup(function () {
-
         var vall = $(this).val();
-
         if(vall == ""){
             $(".re").removeClass( "has-success" ).addClass("has-error");
             repassword = "";
@@ -82,11 +73,8 @@ $(function(){
     });
     
     $("#submitbtn").click(function() {
-
         if(username == "" || email == "" || password == "" || repassword == ""){
-
         } else {
-
             $.ajax({
 
                 type: 'POST',
